@@ -1,6 +1,8 @@
 <?php
 $app = [];
 
+session_start();
+
 require 'connection.php';
 
 $app['db'] = (new DbConnection()) -> db;
@@ -10,6 +12,9 @@ $routers = [
     '/register' => 'controllers/register.php',
     '/home' => 'controllers/home.php',
     '/logIn' => 'controllers/logIn.php',
+    '/registerPage' => 'viewers/registerView.php',
+    '/logInPage' => 'viewers/logInView.php',
+    '/logOut' => 'controllers/logOut.php'
 ];
 
 if(array_key_exists($_SERVER['REQUEST_URI'],$routers)){

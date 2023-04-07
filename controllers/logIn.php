@@ -3,10 +3,10 @@ $UserName = $_POST['userName'];
 $PassWord = $_POST['password'];
 
 try{
-   $UserDatas = $app['db'] -> query("SELECT * FROM usersDetailsData WHERE userName = '$UserName' and Passwords = '$PassWord'");
-   $dataexist = $UserDatas->fetchAll(PDO::FETCH_OBJ);
+   $UserDatas = $app['db'] -> query("SELECT * FROM usersDetailsData WHERE userName = '$UserName' AND Passwords = '$PassWord'");
+   $dataExit = $UserDatas->fetchAll(PDO::FETCH_OBJ);
 
-   if($dataExists){
+   if($dataExit){
     header("location:/home");
    }
    else{

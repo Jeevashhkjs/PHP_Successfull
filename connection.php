@@ -8,7 +8,7 @@ class DbConnection
             $this -> db = new PDO(
                 'mysql:host=localhost;dbname=JasmineJeeva',
                 'root',
-                'jeeva143'
+                'welcome'
             );
         }
         catch(PDOException $e)
@@ -24,6 +24,7 @@ class DbConnection
  
         return $statement;
     }
+
 
 }
 ?>

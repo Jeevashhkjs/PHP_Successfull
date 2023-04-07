@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Register Your Love</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div class="container">
@@ -19,6 +20,7 @@
             <label>Password</label>
             <input type="text" name="password" class="fname" id="fname" />
             <button name="submit">Submit</button>
+            <a href="/logInPage">Have Account Log In</a>
         </form>
     </div>
 </body>
