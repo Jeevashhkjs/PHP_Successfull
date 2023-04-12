@@ -8,7 +8,7 @@ class DbConnection
             $this -> db = new PDO(
                 'mysql:host=localhost;dbname=JasmineJeeva',
                 'root',
-                'welcome'
+                'jeeva143'
             );
         }
         catch(PDOException $e)

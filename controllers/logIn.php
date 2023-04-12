@@ -1,20 +1,33 @@
 <?php
 $UserName = $_POST['userName'];
+
 $PassWord = $_POST['password'];
+
 
 try{
    $UserDatas = $app['db'] -> query("SELECT * FROM usersDetailsData WHERE userName = '$UserName' AND Passwords = '$PassWord'");
    $dataExit = $UserDatas->fetchAll(PDO::FETCH_OBJ);
 
-   if($dataExit){
-    header("location:/home");
+   if(!$dataExit)
+   {
+      header("location:/");
    }
-   else{
-    echo "You have no account";
+   else
+   {
+      $_SESSION['getData'] = [
+         'userName' => $UserName
+      ];
+
+      header("location:/home");
    }
 }
 catch(PDOException $e)
 {
-    die("Check error".$e->getMessage());
+   die("connection error".$e -> getMessage());
 }
+
+
+   
+
+
 ?>

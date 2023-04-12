@@ -2,7 +2,6 @@
 $name = $_POST['fname'];
 $lname = $_POST['lname'];
 $mail = $_POST['mail'];
-$phNumber = $_POST['phNumber'];
 $userName = $_POST['userName'];
 $password = $_POST['password'];
 
@@ -13,11 +12,17 @@ try{
 
     if($OneData)
     {
-        echo "You have already have account";
+       $_SESSION['user_already_exists'] = 'The user exists';
+       header("location:/logIn");
     }
     else
     {
-        $sql = $app['db'] -> query("INSERT INTO usersDetailsData (FirstName,LastName,EmailID,PhoneNumber,userName,Passwords,created_at,updated_at) VALUES ('$name','$lname','$mail','$phNumber','$userName','$password',now(),now())");
+        $sql = $app['db'] -> query("INSERT INTO usersDetailsData (FirstName,LastName,EmailID,userName,Passwords,created_at,updated_at) VALUES ('$name','$lname','$mail','$userName','$password',now(),now())");
+
+        $_SERVER['login'] = [
+            'email' => $userName
+        ];
+
         header('location:/home');
     }
 

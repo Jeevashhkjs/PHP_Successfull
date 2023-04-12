@@ -14,7 +14,8 @@ $routers = [
     '/logIn' => 'controllers/logIn.php',
     '/registerPage' => 'viewers/registerView.php',
     '/logInPage' => 'viewers/logInView.php',
-    '/logOut' => 'controllers/logOut.php'
+    '/logOut' => 'controllers/logOut.php',
+    '/about' => 'controllers/about.php'
 ];
 
 if(array_key_exists($_SERVER['REQUEST_URI'],$routers)){

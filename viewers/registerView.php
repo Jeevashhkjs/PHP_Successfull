@@ -7,14 +7,15 @@
 <body>
     <div class="container">
         <form action="/register" method="post">
+            <?php if(isset($_SESSION['user_already_exists'])): ?>
+            <h2><?php echo $_SESSION['user_already_exists'] ?> </h2>
+            <?php endif; ?>
             <label>Name</label>
             <input type="text" name="fname" class="fname" id="fname" />
             <label>Last Name</label>
             <input type="text" name="lname" class="fname" id="fname" />
             <label>Email</label>
             <input type="text" name="mail" class="fname" id="fname" />
-            <label>Phone No</label>
-            <input type="number" name="phNumber" class="fname" id="fname" />
             <label>UserName</label>
             <input type="text" name="userName" class="fname" id="fname" />
             <label>Password</label>
